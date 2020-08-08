@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% if request.session.login %}
+        <p></p>
+    {% else %}
+    {% endif %}
+
+            <section>
+                <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                    <h1 class="mt-5">THE TODO APP</h1>
+                    <p>Once you login, you can save your todo in your personal and safe database .Keep Track of your things :) </p>
+                    </div>
+                </div>
+                </div>
+            </section>
+
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<b><i>{{message}}</i></b>
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		</div>
+    {% endfor %}
+</ul>
+{% endif %}
+
+
+<div style="background-color:rgb(245, 201, 42);padding-left:50px;padding-right:50px;padding-top:10px;padding-bottom:10px;margin:100px;">
+        <h1 align="center" style="font-family:Ink Free;">Login</h1>
+    </div>
+
+<div class="container" style="padding:100px;margin-top:0px;">
+<form method="POST">{% csrf_token %}
+    <div class="input-group flex-nowrap">
+    <input name="username" type="text" class="form-control" placeholder="Username">
+    <input name="password" type="password" class="form-control" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-warning btn-lg btn-block" style="">Login</button>
+    </form>
+</div>
+
+
+{% endblock %}

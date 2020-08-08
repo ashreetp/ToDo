@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    </head>    
+        <body style="background-color:lightyellow;">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="/">ToDo</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                    {% if request.session.login %}
+                            <a href="/todopage" class="nav-link">Todo App</a>
+                            <a href="/updatelogin" class="nav-link">UpdatePassword</a>
+                            <a href="/delete" class="nav-link">DeleteAccount</a>
+                            <a href="/logout" class="nav-link">Logout</a>
+                        {% else %}
+                            <a href="/login" class="nav-link">Login</a>
+                            <a href="/register" class="nav-link">Register</a>
+                        {% endif %}
+                
+                </ul>
+            </div>
+            </nav>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="#">Welcome to Todo App</a>
+    </div>
+  </nav>
+        {% block body %}
+
+        {% endblock %}
+
+        </body>
+</html>

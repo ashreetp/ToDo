@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <div style="padding:100px;margin-left:300px;margin-right:300px">
+    <form method="post">{% csrf_token %}
+         <div style="display:inline;">
+         <div class="col">
+            <input style="width: 80%;  padding: 5px 5px; " type="text" class="btn-secondary" name="description" value = "{{obj.0.description}}">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Update</button>
+        </div>
+        </div>
+    </div>
+        
+    </form>
+{% endblock %}
